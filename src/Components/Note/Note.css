@@ -1,0 +1,35 @@
+.note {
+  background: aqua;
+  width: 95%;
+  height: 7rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.note-title {
+  font-weight: bold;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0.2rem;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  padding: 0 0.5rem;
+  font-size: 1.4rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+    color: #e5e5e5;
+    background-color: var(--border);
+    border-radius: 0.2rem;
+}
