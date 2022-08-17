@@ -1,0 +1,46 @@
+.note {
+  background: aqua;
+  width: 95%;
+  height: 7rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 1rem 0 0 0;
+}
+
+.note-title {
+  font-weight: bold;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0.2rem;
+}
+
+.btn-text-and-icon {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+  padding: 0.2rem;
+  background: #f1f5f9;
+  width: fit-content;
+  border: none;
+}
+
+.btn-text-and-icon:focus {
+    border: none;
+    outline: none;
+}
+
+.recover {
+  color: green;
+}
+
+.delete {
+  color: red;
+}

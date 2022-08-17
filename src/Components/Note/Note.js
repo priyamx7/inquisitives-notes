@@ -1,32 +1,71 @@
-import React from "react";
-import "./Note.css"
+import React, { useState } from "react";
+import { Link } from "react-router-dom"
+import "./Note.css";
 import { RiInboxArchiveLine } from "react-icons/ri";
-import { MdColorLens, MdLabelOutline, MdDarkMode } from "react-icons/md";
+import { MdColorLens, MdLabelOutline } from "react-icons/md";
 import { HiOutlineTrash } from "react-icons/hi";
 
-export const Note = () => {
+export const Note = (props) => {
+  const colors = [
+    "#E74B7F",
+    "#319B54",
+    "#058ED9",
+    "#F09F9C",
+    "#FCC3A3",
+    "#89E6D8",
+    "FDE74C",
+  ];
+
+  const [noteBgColor, setNoteBgColor] = useState(
+    colors[Math.floor(Math.random() * colors.length)]
+  );
+
   return (
-    <div class="note">
-      <div>
-        <p className="note-title">New Note</p>
-      </div>
-      <div>
-        <p>Start writing...</p>
-      </div>
-      <div className="note-actions">
-        <button className="btn-icon" title="Choose Color">
-          <MdColorLens />
-        </button>
-        <button className="btn-icon" title="Archive">
-          <RiInboxArchiveLine />
-        </button>
-        <button className="btn-icon" title="Label">
-          <MdLabelOutline />
-        </button>
-        <button className="btn-icon" title="Delete">
-          <HiOutlineTrash />
-        </button>
-      </div>
-    </div>
+        <div
+          className="note"
+          key={props.id}
+          style={{ background: `${noteBgColor}` }}
+          onClick={props.editNote}
+        >
+          <div>
+            <Link className="link" to="/edit-note/:noteId">
+            <p className="note-title">{props.title}</p>
+            </Link>
+          </div>
+          <div>
+            <Link className="link" to="/edit-note/:noteId">
+            <p>{props.content}</p>
+            </Link>
+          </div>
+          <div className="note-actions">
+            <text className="btn-icon">
+              <MdColorLens />
+              <input
+                className="color-picker"
+                type="color"
+                value={`${noteBgColor}`}
+                onChange={(e) => setNoteBgColor((color) => e.target.value)}
+              />
+            </text>
+            <button
+              className="btn-icon"
+              title="Archive"
+              onClick={props.archiveBtnClick}
+            >
+              <RiInboxArchiveLine />
+            </button>
+            <button className="btn-icon" title="Label">
+              <MdLabelOutline />
+            </button>
+            <button
+              className="btn-icon"
+              title="Delete"
+              onClick={props.deleteBtnClick}
+            >
+              <HiOutlineTrash />
+            </button>
+            {/* {console.log(state)} */}
+          </div>
+        </div>
   );
 };
