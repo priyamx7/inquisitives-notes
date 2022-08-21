@@ -1,6 +1,8 @@
+import { nanoid } from "nanoid";
+
 export const initialValue = {
   theme: true,
-  notes: [{ id: 1, title: "New Note", content: "Start writing..." }],
+  notes: [{ id: nanoid(), title: "New Note", content: "Start writing..." }],
   archives: [],
   trash: [],
 };
@@ -16,7 +18,7 @@ export const appReducer = (state, action) => {
         notes: [
           ...state.notes,
           {
-            id: state.notes.length + 1,
+            id: nanoid(),
             title: "New Note",
             content: "Start writing...",
           },
@@ -53,6 +55,46 @@ export const appReducer = (state, action) => {
           (trashNote) => trashNote.id !== action.payload.id
         ),
       };
+
+    case "NOTE_TITLE_HANDLER":
+      return {
+        ...state,
+        notes: state.notes.map((note) =>
+          note.id === action.payload.id
+            ? { ...note, title: action.payload.value }
+            : { ...note }
+        ),
+      };
+
+    case "ARCHIVED_NOTE_TITLE_HANDLER":
+      return {
+        ...state,
+        archives: state.archives.map((archivedNote) =>
+          archivedNote.id === action.payload.id
+            ? { ...archivedNote, title: action.payload.value }
+            : { ...archivedNote }
+        ),
+      };
+    case "NOTE_CONTENT_HANDLER":
+      return {
+        ...state,
+        notes: state.notes.map((note) =>
+          note.id === action.payload.id
+            ? { ...note, content: action.payload.value }
+            : { ...note }
+        ),
+      };
+    case "ARCHIVED_NOTE_CONTENT_HANDLER":
+      return {
+        ...state,
+        archives: state.archives.map((archivedNote) =>
+          archivedNote.id === action.payload.id
+            ? { ...archivedNote, content: action.payload.value }
+            : { ...archivedNote }
+        ),
+      };
+
+    
 
     default:
       return state;

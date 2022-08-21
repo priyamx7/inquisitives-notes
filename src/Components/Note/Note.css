@@ -11,6 +11,11 @@
 
 .note-title {
   font-weight: bold;
+  overflow: hidden;
+}
+
+.note-content {
+  overflow: hidden;
 }
 
 .note-actions {
@@ -30,9 +35,9 @@
 }
 
 .btn-icon:hover {
-    color: #e5e5e5;
-    background-color: var(--border);
-    border-radius: 0.2rem;
+  color: #e5e5e5;
+  background-color: var(--border);
+  border-radius: 0.2rem;
 }
 
 .color-picker {
@@ -48,14 +53,4 @@
   text-decoration: none;
   color: var(--primary-text);
   font-size: 1.1rem;
-}
-
-.link:hover {
-  color: inherit;
-  font-weight: inherit;
-}
-
-.link:active {
-  font-weight: bold;
-  color: var(--primary-color);
 }

@@ -1,74 +1,73 @@
-
 .side-bar-container {
-    /* background-color: tan; */
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: fit-content;
-    height: 35vh;
-  }
-  
-  .link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--primary-text);
-    font-size: 1.1rem;
-    transition: all 0.5s ease;
-  }
-  
-  .link-text {
-      margin-left: 0.3rem;
-  }
-  
-  .link:hover {
-    font-weight: bold;
-    color: var(--primary-color);
-  }
-  
-  .link:active {
-    font-weight: bold;
-    color: var(--primary-color);
-  }
-  
-  .btn {
-    background: none;
-    border: none;
-    width: fit-content;
-    background-color: var(--primary-color);
-    border-radius: 0.3rem;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
-    color: #fff;
-    transition: all 0.5s ease;
-    cursor: pointer;
-  }
-  
-  .btn-outline {
-    background-color: #fff;
-    color: #000;
-    border: 0.15rem solid #f7941e;
-  }
-  
-  .btn-rnd {
-    border-radius: 1.2rem;
-  }
-  
-  .btn:hover {
-    color: #e5e5e5;
-    background-color: #f9ab4f;
-  }
-  
-  .btn-fill:hover {
-    border-radius: 0.3rem;
-  }
-  
-  .btn-icon {
-    background: none;
-    border: none;
-    padding: 0 0.5rem;
-    font-size: 1.4rem;
-    transition: all 0.5s ease;
-    cursor: pointer;
-  }
+  /* background-color: tan; */
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: fit-content;
+  height: 35vh;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-text);
+  font-size: 1.1rem;
+  transition: all 0.5s ease;
+}
+
+.link-text {
+  margin-left: 0.3rem;
+}
+
+.link:hover {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.link:focus {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.btn {
+  background: none;
+  border: none;
+  width: fit-content;
+  background-color: var(--primary-color);
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: #fff;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background-color: #fff;
+  color: #000;
+  border: 0.15rem solid #f7941e;
+}
+
+.btn-rnd {
+  border-radius: 1.2rem;
+}
+
+.btn:hover {
+  color: #e5e5e5;
+  background-color: #f9ab4f;
+}
+
+.btn-fill:hover {
+  border-radius: 0.3rem;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  padding: 0 0.5rem;
+  font-size: 1.4rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}

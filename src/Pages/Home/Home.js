@@ -28,6 +28,7 @@ export const Home = () => {
               return (
                 <Note
                   id={note.id}
+                  to={`/edit-note/${note.id}`}
                   title={note.title}
                   content={note.content}
                   editNote={() => {
@@ -45,6 +46,7 @@ export const Home = () => {
               );
             })}
           </div>
+          {console.log(state)}
         </div>
       </div>
     </div>

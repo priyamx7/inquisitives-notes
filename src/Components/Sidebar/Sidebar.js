@@ -14,31 +14,31 @@ export const SideBar = () => {
       <div className="side-bar-container">
         <div>
           <Link className="link" to="/home">
-            <AiOutlineHome />
+            <AiOutlineHome size={20} />
             <span className="link-text">Home</span>
           </Link>
         </div>
         <div>
           <Link className="link" to="/archives">
-            <RiInboxArchiveLine />
+            <RiInboxArchiveLine size={20} />
             <span className="link-text">Archives</span>
           </Link>
         </div>
         <div>
           <Link className="link" to="/trash">
-            <HiOutlineTrash />
+            <HiOutlineTrash size={20} />
             <span className="link-text">Trash</span>
           </Link>
         </div>
         <div>
           <Link className="link" to="/search">
-            <RiSearchLine />
+            <RiSearchLine size={20} />
             <span className="link-text">Search</span>
           </Link>
         </div>
         <div>
           <Link className="link" to="/profile">
-            <CgProfile />
+            <CgProfile size={20} />
             <span className="link-text">Profile</span>
           </Link>
         </div>
