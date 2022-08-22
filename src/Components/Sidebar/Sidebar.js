@@ -12,33 +12,33 @@ export const SideBar = () => {
   return (
     <div>
       <div className="side-bar-container">
-        <div>
+        <div className="link-box">
           <Link className="link" to="/home">
-            <AiOutlineHome size={20} />
+            <AiOutlineHome size={19} />
             <span className="link-text">Home</span>
           </Link>
         </div>
-        <div>
+        <div className="link-box">
           <Link className="link" to="/archives">
-            <RiInboxArchiveLine size={20} />
+            <RiInboxArchiveLine size={19} />
             <span className="link-text">Archives</span>
           </Link>
         </div>
-        <div>
+        <div className="link-box">
           <Link className="link" to="/trash">
-            <HiOutlineTrash size={20} />
+            <HiOutlineTrash size={19} />
             <span className="link-text">Trash</span>
           </Link>
         </div>
-        <div>
+        <div className="link-box">
           <Link className="link" to="/search">
-            <RiSearchLine size={20} />
+            <RiSearchLine size={19} />
             <span className="link-text">Search</span>
           </Link>
         </div>
-        <div>
+        <div className="link-box">
           <Link className="link" to="/profile">
-            <CgProfile size={20} />
+            <CgProfile size={19} />
             <span className="link-text">Profile</span>
           </Link>
         </div>
@@ -47,7 +47,7 @@ export const SideBar = () => {
             className="btn btn-rnd btn-fill"
             onClick={() => dispatch({ type: "CREATE_NEW_NOTE" })}
           >
-            Create new note
+            Create New Note
           </button>
         </div>
       </div>

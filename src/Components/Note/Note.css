@@ -9,6 +9,12 @@
   margin: 1rem 0 0 0;
 }
 
+.title-and-pin-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .note-title {
   font-weight: bold;
   overflow: hidden;
@@ -36,21 +42,27 @@
 
 .btn-icon:hover {
   color: #e5e5e5;
-  background-color: var(--border);
-  border-radius: 0.2rem;
+  /* background-color: var(--border); */
+  /* border-radius: 0.2rem; */
+}
+
+.pin:hover {
+  color: #fff;
+  background: none;
+  border-radius: 0;
 }
 
 .color-picker {
-  border: none;
-  background: transparent;
-  width: 1rem;
-  height: 1rem;
-  outline: none;
-  border-radius: 3rem;
+  visibility: hidden;
 }
 
 .link {
   text-decoration: none;
   color: var(--primary-text);
   font-size: 1.1rem;
+}
+
+.link:hover {
+  color: inherit;
+  font-weight: inherit;
 }

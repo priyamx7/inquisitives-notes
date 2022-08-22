@@ -1,0 +1,6 @@
+export {Home} from "./Home/Home"
+export {Archives} from "./Archives/Archives"
+export {Landing} from "./Landing/Landing"
+export {Profile} from "./Profile/Profile"
+export {Search} from "./Search/Search"
+export {Trash} from "./Trash/Trash"

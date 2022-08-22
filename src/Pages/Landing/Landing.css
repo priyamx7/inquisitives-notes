@@ -1,0 +1,22 @@
+.landing-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.landing-page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 2rem 0;
+}
+
+.link {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.link:hover {
+    font-size: inherit;
+}

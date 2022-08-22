@@ -1,9 +1,9 @@
 import React from "react";
 import "../Home/Home.css";
 import "./Trash.css"
-import { NavBar } from "../../Components/NavBar/NavBar";
-import { SideBar } from "../../Components/SideBar/SideBar";
-import { TrashNote } from "../../Components/TrashNote/TrashNote";
+import { NavBar } from "../../Components";
+import { SideBar } from "../../Components";
+import { TrashNote } from "../../Components";
 import { useApp } from "../../Contexts/AppContext";
 import trashCanDynamicGradient from "../../Assets/Images/trashCanDynamicGradient.png"
 

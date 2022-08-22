@@ -1,9 +1,10 @@
 import React from "react";
 import "./Home.css";
-import { SideBar } from "../../Components/SideBar/SideBar";
-import { NavBar } from "../../Components/NavBar/NavBar";
-import { Note } from "../../Components/Note/Note";
+import { SideBar } from "../../Components";
+import { NavBar } from "../../Components";
+import { Note } from "../../Components";
 import { useApp } from "../../Contexts/AppContext";
+import { BsPin, BsPinFill } from "react-icons/bs";
 
 export const Home = () => {
   const { state, dispatch } = useApp();
@@ -17,12 +18,48 @@ export const Home = () => {
           <SideBar />
         </div>
         <div className="notes-container">
+          <div
+            className={
+              state.pinnedNotes.length === 0
+                ? "empty-pinned-note"
+                : "pinned-notes-container"
+            }
+          >
+            <p className="note-title">Pinned Notes</p>
+            {state.pinnedNotes.map((pinnedNote) => {
+              return (
+                <Note
+                  id={pinnedNote.id}
+                  to={`/edit-archived-note/${pinnedNote.id}`}
+                  title={pinnedNote.title}
+                  content={pinnedNote.content}
+                  pinIcon={<BsPinFill />}
+                  pinBtnHandler={() => {
+                    dispatch({ type: "REMOVE_FROM_PINNED_NOTES", payload: pinnedNote });
+                    dispatch({ type: "MOVE_TO_NOTES", payload: pinnedNote });
+                  }}
+                  deleteBtnClick={() => {
+                    dispatch({ type: "MOVE_TO_TRASH", payload: pinnedNote });
+                    dispatch({
+                      type: "REMOVE_FROM_PINNED_NOTES",
+                      payload: pinnedNote,
+                    });
+                  }}
+                  archiveBtnClick={() => {
+                    dispatch({ type: "MOVE_TO_NOTES", payload: pinnedNote });
+                    dispatch({
+                      type: "REMOVE_FROM_PINNED_NOTES",
+                      payload: pinnedNote,
+                    });
+                  }}
+                />
+              );
+            })}
+          </div>
+
           <div>
             <p className="note-title">Notes</p>
           </div>
-          <button className="btn btn-rnd btn-fill btn-note">
-            Sort: Latest
-          </button>
           <div>
             {state.notes.map((note) => {
               return (
@@ -31,8 +68,13 @@ export const Home = () => {
                   to={`/edit-note/${note.id}`}
                   title={note.title}
                   content={note.content}
+                  pinIcon={<BsPin />}
                   editNote={() => {
-                    console.log("editNote clicked")
+                    console.log("editNote clicked");
+                  }}
+                  pinBtnHandler={() => {
+                    dispatch({ type: "PIN_NOTE", payload: note });
+                    dispatch({ type: "REMOVE_FROM_NOTES", payload: note });
                   }}
                   archiveBtnClick={() => {
                     dispatch({ type: "MOVE_TO_ARCHIVES", payload: note });
@@ -46,9 +88,39 @@ export const Home = () => {
               );
             })}
           </div>
-          {console.log(state)}
         </div>
+        {console.log(state)}
       </div>
     </div>
   );
 };
+
+// <div>
+//             <p className="note-title">Notes</p>
+//           </div>
+//           <div>
+//             {state.notes.map((note) => {
+//               return (
+//                 <Note
+//                   id={note.id}
+//                   // to={`/edit-note/${note.id}`}
+//                   title={note.title}
+//                   content={note.content}
+//                   editNote={() => {
+//                     console.log("editNote clicked");
+//                   }}
+//                   pinBtnHandler={() => {
+//                     dispatch({ type: "PIN_NOTE", payload: note });
+//                   }}
+//                   archiveBtnClick={() => {
+//                     dispatch({ type: "MOVE_TO_ARCHIVES", payload: note });
+//                     dispatch({ type: "REMOVE_FROM_NOTES", payload: note });
+//                   }}
+//                   deleteBtnClick={() => {
+//                     dispatch({ type: "MOVE_TO_TRASH", payload: note });
+//                     dispatch({ type: "REMOVE_FROM_NOTES", payload: note });
+//                   }}
+//                 />
+//               );
+//             })}
+//           </div>

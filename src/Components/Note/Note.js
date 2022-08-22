@@ -6,19 +6,26 @@ import { MdColorLens, MdLabelOutline } from "react-icons/md";
 import { HiOutlineTrash } from "react-icons/hi";
 
 export const Note = (props) => {
-  const colors = [
-    "#E74B7F",
-    "#319B54",
-    "#058ED9",
-    "#F09F9C",
-    "#FCC3A3",
-    "#89E6D8",
-    "#FDE74C",
-  ];
+  // const colors = [
+  //   "#E74B7F",
+  //   "#319B54",
+  //   "#058ED9",
+  //   "#F09F9C",
+  //   "#FCC3A3",
+  //   "#89E6D8",
+  //   "#FDE74C",
+  //   "#A0B3FD",
+  // ];
 
-  const [noteBgColor, setNoteBgColor] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
+  // const [noteBgColor, setNoteBgColor] = useState(
+  //   colors[Math.floor(Math.random() * colors.length)]
+  // );
+
+  const [noteBgColor, setNoteBgColor] = useState("#FCC3A3");
+
+  // useEffect(() => {
+  //   return noteBgColor
+  // }, [])
 
   return (
     <div
@@ -26,17 +33,24 @@ export const Note = (props) => {
       key={props.id}
       style={{ background: `${noteBgColor}` }}
     >
-      <div className="note-title" onClick={props.editNote}>
-        <Link className="link" to={props.to}>
-          <p>
-            {props.title.length > 20
-              ? props.title.slice(0, 19) + "..."
-              : props.title}
-          </p>
-        </Link>
+      <div className="title-and-pin-container">
+        <div className="note-title" onClick={props.editNote}>
+          <Link className="link" to={props.to}>
+            <p>
+              {props.title.length > 20
+                ? props.title.slice(0, 19) + "..."
+                : props.title}
+            </p>
+          </Link>
+        </div>
+        <div>
+          <button className="btn-icon" onClick={props.pinBtnHandler}>
+            {props.pinIcon}
+          </button>
+        </div>
       </div>
       <div onClick={props.editNote}>
-        <Link className="link" to={`/edit-note/${props.id}`}>
+        <Link className="link" to={props.to}>
           <p className="note-content">
             {props.content.length > 50
               ? props.content.slice(0, 49) + "..."
@@ -45,15 +59,15 @@ export const Note = (props) => {
         </Link>
       </div>
       <div className="note-actions">
-        <text className="btn-icon">
-          <MdColorLens />
+        <label className="btn-icon">
           <input
             className="color-picker"
             type="color"
             value={`${noteBgColor}`}
             onChange={(e) => setNoteBgColor((color) => e.target.value)}
           />
-        </text>
+          <MdColorLens />
+        </label>
         <button
           className="btn-icon"
           title="Archive"

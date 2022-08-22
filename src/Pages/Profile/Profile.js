@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavBar } from '../../Components/NavBar/NavBar'
-import { SideBar } from '../../Components/SideBar/SideBar'
+import { NavBar } from '../../Components'
+import { SideBar } from '../../Components'
 
 export const Profile = () => {
   return (

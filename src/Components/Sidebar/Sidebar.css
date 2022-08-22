@@ -1,5 +1,4 @@
 .side-bar-container {
-  /* background-color: tan; */
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -8,10 +7,14 @@
   height: 35vh;
 }
 
+.link-box:hover {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
 .link {
   display: flex;
   align-items: center;
-  text-decoration: none;
   color: var(--primary-text);
   font-size: 1.1rem;
   transition: all 0.5s ease;
@@ -19,16 +22,6 @@
 
 .link-text {
   margin-left: 0.3rem;
-}
-
-.link:hover {
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-.link:focus {
-  font-weight: bold;
-  color: var(--primary-color);
 }
 
 .btn {

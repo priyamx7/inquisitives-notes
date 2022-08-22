@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 export const initialValue = {
   theme: true,
   notes: [{ id: nanoid(), title: "New Note", content: "Start writing..." }],
+  pinnedNotes: [],
   archives: [],
   trash: [],
 };
@@ -93,8 +94,19 @@ export const appReducer = (state, action) => {
             : { ...archivedNote }
         ),
       };
+    case "PIN_NOTE":
+      return {
+        ...state,
+        pinnedNotes: [...state.pinnedNotes, { ...action.payload }],
+      };
 
-    
+    case "REMOVE_FROM_PINNED_NOTES":
+      return {
+        ...state,
+        pinnedNotes: state.pinnedNotes.filter(
+          (pinnedNote) => pinnedNote.id !== action.payload.id
+        ),
+      };
 
     default:
       return state;

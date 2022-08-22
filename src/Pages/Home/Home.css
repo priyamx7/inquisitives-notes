@@ -51,3 +51,14 @@
 .note-title {
   font-weight: bold;
 }
+
+.empty-pinned-note {
+  display: none;
+}
+
+.pinned-notes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 0 1rem 0;
+}

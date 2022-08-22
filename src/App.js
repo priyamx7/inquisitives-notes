@@ -1,18 +1,20 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./Pages/Home/Home";
-import { Archives } from "./Pages/Archives/Archives";
-import { Trash } from "./Pages/Trash/Trash";
-import { Search } from "./Pages/Search/Search";
-import { Profile } from "./Pages/Profile/Profile";
-import { NoteEditor } from "./Components/NoteEditor/NoteEditor";
+import { Home } from "./Pages";
+import { Archives } from "./Pages";
+import { Trash } from "./Pages";
+import { Search } from "./Pages";
+import { Profile } from "./Pages";
+import { Landing } from "./Pages";
+import { NoteEditor } from "./Components";
 import { useApp } from "./Contexts/AppContext";
 
 function App() {
-  const { editorValue, dispatch } = useApp();
+  const { dispatch } = useApp();
   return (
     <div className="App">
       <Routes>
+        <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
         <Route path="/archives" element={<Archives />} />
         <Route path="/trash" element={<Trash />} />
@@ -28,10 +30,9 @@ function App() {
                 dispatch({ type: "NOTE_TITLE_HANDLER", payload: e.target })
               }
               contentChangeHandler={(x) => {
-                dispatch({ type: "NOTE_CONTENT_HANDLER", payload: x.target })
-                console.log(x.target)
-              }
-              }
+                dispatch({ type: "NOTE_CONTENT_HANDLER", payload: x.target });
+                console.log(x.target);
+              }}
             />
           }
         />

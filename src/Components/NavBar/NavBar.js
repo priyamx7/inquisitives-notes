@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import "./NavBar.css";
 import { MdDarkMode } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
@@ -9,7 +10,9 @@ export const NavBar = () => {
   return (
     <div className="nav">
       <div className="logo-and-title">
-        <p>Logo & Title</p>
+        <Link className="link" to="/">
+          Logo & Title
+        </Link>
       </div>
       <div className="nav-items">
         <button

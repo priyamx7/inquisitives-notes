@@ -1,15 +1,13 @@
 import React from "react";
 import "../Home/Home.css"
 import "./Archives.css"
-import { NavBar } from "../../Components/NavBar/NavBar";
-import { SideBar } from "../../Components/SideBar/SideBar";
-import { Note } from "../../Components/Note/Note";
+import { NavBar } from "../../Components";
+import { SideBar } from "../../Components";
+import { Note } from "../../Components";
 import { useApp } from "../../Contexts/AppContext";
 import fileTextDynamicImage from "../../Assets/Images/fileTextDynamicGradient.png"
 
 export const Archives = () => {
-
-  // const fileImage = require("../Assets/Images/fileTextDynamicGradient.png")
 
   const { state, dispatch } = useApp();
   return (
