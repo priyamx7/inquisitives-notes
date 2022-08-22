@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import { SideBar } from "../../Components";
+import { Sidebar } from "../../Components";
 import { NavBar } from "../../Components";
 import { Note } from "../../Components";
 import { useApp } from "../../Contexts/AppContext";
@@ -15,7 +15,7 @@ export const Home = () => {
       </div>
       <div className="main-container">
         <div>
-          <SideBar />
+          <Sidebar />
         </div>
         <div className="notes-container">
           <div

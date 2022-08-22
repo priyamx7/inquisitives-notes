@@ -2,7 +2,7 @@ import React from "react";
 import "../Home/Home.css"
 import "./Archives.css"
 import { NavBar } from "../../Components";
-import { SideBar } from "../../Components";
+import { Sidebar } from "../../Components";
 import { Note } from "../../Components";
 import { useApp } from "../../Contexts/AppContext";
 import fileTextDynamicImage from "../../Assets/Images/fileTextDynamicGradient.png"
@@ -17,7 +17,7 @@ export const Archives = () => {
       </div>
       <div className="main-container">
         <div>
-          <SideBar />
+          <Sidebar />
         </div>
         <div className="notes-container">
           <div>

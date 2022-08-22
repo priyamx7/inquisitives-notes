@@ -1,5 +1,5 @@
 import React from "react";
-import "./SideBar.css";
+import "./Sidebar.css";
 import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { RiInboxArchiveLine, RiSearchLine } from "react-icons/ri";
@@ -7,7 +7,7 @@ import { HiOutlineTrash } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
 import { useApp } from "../../Contexts/AppContext";
 
-export const SideBar = () => {
+export const Sidebar = () => {
   const { dispatch } = useApp();
   return (
     <div>

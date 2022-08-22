@@ -2,7 +2,7 @@ import React from "react";
 import "../Home/Home.css";
 import "./Trash.css"
 import { NavBar } from "../../Components";
-import { SideBar } from "../../Components";
+import { Sidebar } from "../../Components";
 import { TrashNote } from "../../Components";
 import { useApp } from "../../Contexts/AppContext";
 import trashCanDynamicGradient from "../../Assets/Images/trashCanDynamicGradient.png"
@@ -16,7 +16,7 @@ export const Trash = () => {
       </div>
       <div className="main-container">
         <div>
-          <SideBar />
+          <Sidebar />
         </div>
         <div className="notes-container">
           <div>
